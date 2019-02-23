@@ -1,0 +1,1 @@
+module.exports = (content, depth = 6 ) => console.dir(content, { depth, colors: true });
