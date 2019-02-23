@@ -1,0 +1,12 @@
+[ { type: 'element',
+    tagName: 'richtext',
+    attributes: { tagName: 'h2', value: 'parrafo' },
+    children: [] },
+  { type: 'element',
+    tagName: 'richtext',
+    attributes:
+     { tagName: 'div',
+       multiline: 'p',
+       className: 'azul',
+       value: '<p>texto enriquecido</p>,<p>texto enriquecido</p>' },
+    children: [] } ]
