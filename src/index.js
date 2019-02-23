@@ -31,5 +31,4 @@ const result = parse(htmlTrimed);
 console.log(result);
 
 
-export const exp = tag => console.log(tag);
-
+export const mylog = text => console.log(text);
