@@ -1,11 +1,11 @@
-const htmlTrim = html => {
+export const htmlTrim = html => {
     return html.replace(/\n/g, "")
                 .replace(/[\t ]+\</g, "<")
                 .replace(/\>[\t ]+\</g, "><")
                 .replace(/\>[\t ]+$/g, ">");
 }
 
-const applyFnTree = (tree, fn) => {
+export const applyFnTree = (tree, fn) => {
     
     const readTree = (node) => {
         fn(node)
@@ -15,10 +15,4 @@ const applyFnTree = (tree, fn) => {
         return node;
     }
     return readTree(tree);
-}
-
-
-module.exports = {
-    htmlTrim,
-    applyFnTree
 }
