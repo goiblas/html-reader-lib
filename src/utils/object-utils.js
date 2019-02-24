@@ -1,4 +1,4 @@
-import { reduce } from 'lodash';
+
 // sanitanize
 var ATTRIBUTE_MAPPING = {
     'for': 'htmlFor',

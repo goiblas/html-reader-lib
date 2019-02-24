@@ -1,17 +1,19 @@
 {
   "name": "html-lib",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "private": true,
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
+    "start": "BABEL_ENV=dev nodemon --exec babel-node src/index.js",
+    "build": "BABEL_ENV=prod babel src -d dist",
     "test": ""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@wordpress/babel-preset-default": "^3.0.2",
     "himalaya": "^1.1.0",
     "lodash": "^4.17.11"
   },

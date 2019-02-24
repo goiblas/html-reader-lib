@@ -5,14 +5,3 @@ export const htmlTrim = html => {
                 .replace(/\>[\t ]+$/g, ">");
 }
 
-export const applyFnTree = (tree, fn) => {
-    
-    const readTree = (node) => {
-        fn(node)
-        if(node.children) {
-            node.children.map(readTree);
-        }
-        return node;
-    }
-    return readTree(tree);
-}
