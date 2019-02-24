@@ -1,3 +1,4 @@
+import { reduce } from 'lodash';
 // sanitanize
 var ATTRIBUTE_MAPPING = {
     'for': 'htmlFor',
@@ -10,10 +11,12 @@ function sanitanizeAttribute(attr) {
 
 const arrayAttributesToObject = attributes => {
     if(attributes.length > 0) {
-        return attributes.reduce( (obj, { key, value}) => {
+        const result = {};
+        attributes.forEach(({key, value}) => {
             const attr = sanitanizeAttribute(key);
-            return {...obj, [attr]: value || attr};
-        }, {})
+            result[attr] = value || attr;
+        });
+        return result;
     } else {
         return {};
     }
@@ -41,10 +44,11 @@ const commentReader = comment => {
         const properties = attr.split(':');
         return {[properties[0]]: properties[1]};
     });
-
-    const attributes = attributesArray.reduce( (obj, attr) => {
-        return {...obj, ...attr};
-    }, {});
+    
+    const attributes = {};
+    attributesArray.forEach(attr => {
+        Object.assign(attributes, attr);
+    });
 
     return {
         tagName, attributes

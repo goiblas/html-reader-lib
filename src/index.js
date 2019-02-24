@@ -6,7 +6,7 @@ import { htmlTrim } from './utils/html-utils';
 import { sanitizeNode, applyComments } from './utils/object-utils';
 // dependencias de desarrollo
 // const log = require('./dev/object-log');
-// const example = require('./dev/examples-reader')('01-simple.html');
+// const example = require('./dev/examples-reader')('02-richtext.html');
 
 
 
@@ -19,6 +19,9 @@ import { sanitizeNode, applyComments } from './utils/object-utils';
 //                         .filter( element => element !== undefined);
             
 // log(htmlObject);
+
+
+
 
 export default {
     parseHtml: html => {
